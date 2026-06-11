@@ -32,3 +32,22 @@ print(df[["Title", "Episodes"]].head()) ;
 
 print(df['Episodes'].dtype)  
 
+
+#  now  abtraction of time from title 
+
+def extract_time(txt):
+    cheak = False ; 
+    data = "" ; 
+    for i in range(len(txt)):
+        if txt[i] ==")": 
+            for j in range(i+1,i+20):
+                data+=txt[j] 
+
+            return data 
+
+
+
+df['Total Time'] = df['Title'].apply(extract_time)
+
+print(df[['Title','Total Time']].head())
+
