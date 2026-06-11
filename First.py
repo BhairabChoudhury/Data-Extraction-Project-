@@ -24,3 +24,8 @@ def extract_episodes(txt):
 df["Episodes"] = df["Title"].apply(extract_episodes)
 
 print(df[["Title", "Episodes"]].head())
+
+df['Episodes'] = df['Episodes'].str.replace(' eps', '')
+
+print(df[["Title", "Episodes"]].head()) ; 
+
